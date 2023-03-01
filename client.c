@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:46:30 by abazerou          #+#    #+#             */
-/*   Updated: 2023/02/27 23:13:04 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/03/01 04:59:08 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-static int	pid_p(int pid, int ac, char* av)
+static int	pid_p(int pid, int ac, char *av)
 {
 	if (ac != 3)
 	{
@@ -48,7 +48,7 @@ static int	pid_p(int pid, int ac, char* av)
 		exit(0);
 	}
 	pid = ft_atoi(av);
-	if(pid <= 0)
+	if (pid <= 0)
 	{
 		ft_printf("Please enter a valid PID !");
 		exit(0);
@@ -78,9 +78,10 @@ static void	send_signal(char *msg, int pid)
 	}
 }
 
-int main(int argc, char* argv[])
+int	main(int argc, char *argv[])
 {
-    int pid;
+	int	pid;
+
 	pid = 0;
 	pid = pid_p(pid, argc, argv[1]);
 	send_signal(argv[2], pid);
