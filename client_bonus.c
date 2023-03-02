@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:57:44 by abazerou          #+#    #+#             */
-/*   Updated: 2023/03/02 02:01:30 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/03/02 03:38:15 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void	msg_sent(int sig)
 	if (sig == SIGUSR2)
 		ft_printf("\033[92m==> Message sent Successfully!\033[0m\n\n");
 }
+
 static void	send_signal(char *msg, int pid)
 {
 	int		i;
@@ -74,7 +75,6 @@ static void	send_signal(char *msg, int pid)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			
 			shift--;
 			usleep(500);
 		}
