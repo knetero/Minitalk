@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:46:30 by abazerou          #+#    #+#             */
-/*   Updated: 2023/03/01 04:59:08 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:02:35 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ static int	pid_p(int pid, int ac, char *av)
 {
 	if (ac != 3)
 	{
-		ft_printf("Please enter 3 arguments !");
+		ft_printf("\033\n[0;33m ==> Please enter 3 arguments!\033[0;33m\n\n");
 		exit(0);
 	}
 	pid = ft_atoi(av);
 	if (pid <= 0)
 	{
-		ft_printf("Please enter a valid PID !");
+		ft_printf("\033[0;31m ==> Please enter a valid PID!\033[0;31m\n\n");
 		exit(0);
 	}
 	return (pid);

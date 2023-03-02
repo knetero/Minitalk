@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:58:13 by abazerou          #+#    #+#             */
-/*   Updated: 2023/03/01 23:21:59 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:08:14 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static void	print_char(char *str, int pid)
 	}
 	ft_printf("%c", result);
 	if (result == '\0')
-		printf("fef");
 		kill(pid, SIGUSR2);
 }
 
