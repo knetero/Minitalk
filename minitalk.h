@@ -6,7 +6,7 @@
 /*   By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:19:40 by abazerou          #+#    #+#             */
-/*   Updated: 2023/03/01 22:46:42 by abazerou         ###   ########.fr       */
+/*   Updated: 2023/03/05 17:36:31 by abazerou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "ft_printf/ft_printf.h"
-# include <sys/types.h>
 # include <signal.h>
-# include <time.h>
 
 #endif

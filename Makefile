@@ -6,14 +6,14 @@
 #    By: abazerou <abazerou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/26 23:12:37 by abazerou          #+#    #+#              #
-#    Updated: 2023/02/27 22:41:32 by abazerou         ###   ########.fr        #
+#    Updated: 2023/03/05 17:08:39 by abazerou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CLIENT	=	client
 SERVER	=	server
-CLIENTB	=	client_bonus
-SERVERB	=	server_bonus
+CLIENT_B	=	client_bonus
+SERVER_B	=	server_bonus
 
 PRINTF		=	ft_printf/libftprintf.a
 PRINTF_DIR	=	ft_printf/
@@ -31,7 +31,7 @@ red			=	`tput setaf 1`
 green		=	`tput setaf 2`
 white		=	`tput setaf 7`
 
-all: $(SERVER) $(CLIENT) $(SERVERB) $(CLIENTB)
+all: $(SERVER) $(CLIENT) $(SERVER_B) $(CLIENT_B)
 
 $(SERVER): $(PRINTF) $(HEADER) $(SRC_S)
 	@ $(CC) $(CFLAG) $(SRC_S) $(PRINTF) -o $(SERVER) 
@@ -41,12 +41,12 @@ $(CLIENT): $(PRINTF) $(HEADER) $(SRC_C)
 	@ $(CC) $(CFLAG) $(SRC_C) $(PRINTF) -o $(CLIENT)
 	@echo " [$(green)SUCCESS$(white)] client $(green)ready$(white)."
 
-$(SERVERB): $(PRINTF) $(HEADER) $(SRCB_S)
-	@ $(CC) $(CFLAG) $(SRCB_S) $(PRINTF) -o $(SERVERB)
+$(SERVER_B): $(PRINTF) $(HEADER) $(SRCB_S)
+	@ $(CC) $(CFLAG) $(SRCB_S) $(PRINTF) -o $(SERVER_B)
 	@echo " [$(green)SUCCESS$(white)] server_bonus $(green)ready$(white)."
 
-$(CLIENTB): $(PRINTF) $(HEADER) $(SRCB_C)
-	@ $(CC) $(CFLAG) $(SRCB_C) $(PRINTF) -o $(CLIENTB)
+$(CLIENT_B): $(PRINTF) $(HEADER) $(SRCB_C)
+	@ $(CC) $(CFLAG) $(SRCB_C) $(PRINTF) -o $(CLIENT_B)
 	@echo " [$(green)SUCCESS$(white)] client_bonus $(green)ready$(white)."
 
 $(PRINTF):
@@ -56,7 +56,7 @@ clean:
 	@ $(RM) $(CLIENT) $(SERVER)
 	@echo " [$(red)INFO$(white)] client $(red)removed$(white)."
 	@echo " [$(red)INFO$(white)] server $(red)removed$(white)."
-	@ $(RM) $(CLIENTB) $(SERVERB)
+	@ $(RM) $(CLIENT_B) $(SERVER_B)
 	@echo " [$(red)INFO$(white)] client_bonus $(red)removed$(white)."
 	@echo " [$(red)INFO$(white)] server_bonus $(red)removed$(white)."	
 
@@ -66,13 +66,13 @@ fclean:
 	@ $(RM) $(CLIENT) $(SERVER)
 	@echo " [$(red)INFO$(white)] client $(red)removed$(white)."
 	@echo " [$(red)INFO$(white)] server $(red)removed$(white)."
-	@ $(RM) $(CLIENTB) $(SERVERB)
+	@ $(RM) $(CLIENT_B) $(SERVER_B)
 	@echo " [$(red)INFO$(white)] client_bonus $(red)removed$(white)."
 	@echo " [$(red)INFO$(white)] server_bonus $(red)removed$(white)."	
 re: fclean all
 
 mandatory:	$(CLIENT) $(SERVER)
-bonus:		$(CLIENTB) $(SERVERB)
+bonus:		$(CLIENT_B) $(SERVER_B)
 
 m : mandatory
 b : bonus
